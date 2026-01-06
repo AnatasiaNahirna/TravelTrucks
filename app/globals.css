@@ -1,0 +1,48 @@
+body {
+  font-family: var(--font-inter), sans-serif;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #E44848;
+  color: #fff;
+  border: none;
+  border-radius: 200;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: #D84343;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}

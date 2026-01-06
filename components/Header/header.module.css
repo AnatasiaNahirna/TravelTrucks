@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    background-color: #F7F7F7;
+    align-items: center;
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
+.logo {
+    text-decoration: none;
+    color: #475467;
+}
+
+.logopart {
+    color: #101828;
+}
+
+.navigation {
+    flex: 1;
+}
+
+.navUl {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+}
+
+.navLink {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    color: #101828;
+}
+
+.navLink:hover,
+.navLink:focus,
+.linkactive {
+    color: #D84343;
+}
