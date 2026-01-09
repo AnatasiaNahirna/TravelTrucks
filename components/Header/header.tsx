@@ -9,7 +9,11 @@ export default function Header() {
 
     return (
         <header className={css.header}>
-            <Link href="/" aria-label="Home" className={css.logo}><span className={css.logopart}>Travel</span>Trucks</Link>
+            <Link href="/" aria-label="Home">
+                <svg className={css.logo}>
+                    <use href="/svg/logo.svg" />
+                </svg>
+            </Link>
             <nav className={css.navigation}>
                 <ul className={css.navUl}>
                 <li>
