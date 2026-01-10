@@ -16,7 +16,7 @@ export default interface Camper {
     refrigerator: boolean,
     microwave: boolean,
     water: boolean,
-    automatic: boolean,
+    transmission: string,
     reviews: {reviewer_name: string, reviewer_rating: number, comment: string,},
     gallery: string[] | string,
 }

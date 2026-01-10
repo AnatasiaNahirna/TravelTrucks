@@ -66,6 +66,7 @@ export default function CamperCard({ camper }: CamperCardProps) {
 
                 <div className={css.categories}>
                     {camperCategories.map(({ icon, title }) => {
+                        
                         return null // додам пізніше
                     })}
                 </div>
