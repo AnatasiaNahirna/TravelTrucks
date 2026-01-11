@@ -55,7 +55,7 @@ export default function CamperCard({ camper }: CamperCardProps) {
                         <svg className={css.ratingSvg}>
                             <use href='/svg/star.svg'/>
                         </svg>
-                        <p className={css.ratText}>{camper.rating} ({camper.reviews.length} Reviews)</p>
+                        <p className={`${css.ratText} ${css.ratingText}`}>{camper.rating} ({camper.reviews.length} Reviews)</p>
                     </div>
                     <div className={css.location}>
                         <svg className={css.ratingSvg}>
@@ -69,6 +69,7 @@ export default function CamperCard({ camper }: CamperCardProps) {
                 <div className={css.categories}>
                     {camperCategories
                         .filter(({ key }) => camper[key])
+                        .slice(0,4)
                         .map(({ icon, title }) => {
                         return <Category key={title} icon={icon} title={title}/>
                     })}

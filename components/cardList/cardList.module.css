@@ -1,0 +1,27 @@
+
+.list li:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+.btnWrap {
+    display: flex;
+    justify-content: center;
+}
+
+.loadMore {
+    font-weight: 500;
+    font-size: 16px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #DADDE1;
+    border-radius: 200px;
+    width: 145px;
+    height: 56px;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loadMore:hover,
+.loadMore:active {
+    border-color: #E44848;
+}

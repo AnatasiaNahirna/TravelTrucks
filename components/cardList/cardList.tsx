@@ -11,20 +11,36 @@ interface CamperListProps {
 }
 
 export default function CardList({ campers }: CamperListProps) {
-    const [page, addPage] = useState(1);
-    const handleBtnClick = async() => {
-        await fetchCampers(page);
-        addPage(page => page + 1)
-    }
+    const [allCampers, setAllCampers] = useState<Camper[]>(campers);
+    const [page, setPage] = useState(1);
+    const [hasMore, setHasMore] = useState(true);
+
+   const handleBtnClick = async () => {
+        const nextPage = page + 1;
+
+        try {
+            const newCampers = await fetchCampers(nextPage);
+            if (newCampers.items.length === 0) {
+                setHasMore(false);
+            }
+            setAllCampers((prev) => [...prev, ...newCampers.items]);
+            setPage(nextPage);
+        } catch (error) {
+            console.error(error);
+        } finally {
+        }
+    };
 
     return (
         <div className={css.wrapper}>
         <ul className={css.list}>
-            {campers.map((camper) => (
+            {allCampers.map((camper) => (
                 <CamperCard key={camper.id} camper={camper}></CamperCard>
             ))}
-        </ul>
-            <button className={css.loadMore} onClick={handleBtnClick}>Load more</button>
+            </ul>
+            <div className={css.btnWrap}>
+                {hasMore ? <button className={css.loadMore} onClick={handleBtnClick}>Load more</button> : null}
+            </div>
         </div>
     )
 }

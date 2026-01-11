@@ -2,7 +2,6 @@
     display: flex;
     gap: 24px;
     max-width: 888px;
-    margin-bottom: 32px;
     border: 1px solid #DADDE1;
     border-radius: 20px;
     padding: 24px;
@@ -72,6 +71,10 @@
     height: 16px;
     width: 16px;
     margin-right: 4px;
+}
+
+.ratingText {
+    text-decoration: underline;
 }
 
 .ratText {
