@@ -1,16 +1,6 @@
 'use client'
+import { useState } from 'react';
 import css from './filters.module.css';
-
-interface FiltersState {
-  location: string;
-  vehicleType: VehicleType | "";
-  AC: boolean;
-  bathroom: boolean;
-  kitchen: boolean;
-  TV: boolean;
-}
-
-type VehicleType = "panelTruck" | "fullyIntegrated" | "alcove";
 
 interface filterValuesProps {
     svg: string;
@@ -32,22 +22,10 @@ const vehicleType: filterValuesProps[] = [
 ]
 
 export default function Filter() {
-    // const handleLocationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     onChange({ ...filters, location: e.target.value });
-    // };
-
-    //     // Тогл булевих фільтрів
-    // const toggleFilter = (key: keyof Omit<FiltersState, "location" | "vehicleType">) => {
-    //     onChange({ ...filters, [key]: !filters[key] });
-    // };
-
-    //     // Вибір типу транспортного засобу
-    // const setVehicleType = (type: VehicleType) => {
-    //     onChange({ ...filters, vehicle })
-    // }
-    const handleSearch = () => {return null}
-    const onFilterClick = () => { return null }
-    const onTypeClick =() => {return null}
+    const setLocation = () => { return null };
+    const applyFilters = () => { return null };
+    const selectType = () => { return null };
+    const search = () => { return null };
 
      return (
     <div className={css.wrapper}>
@@ -60,8 +38,7 @@ export default function Filter() {
             type="text"
             className={css.input}
             placeholder="Kyiv, Ukraine"
-            // value={filters.location}
-            // onChange={handleLocationChange}
+            onChange={setLocation}
           />
         </div>
 
@@ -69,9 +46,9 @@ export default function Filter() {
 
         <h3 className={css.filterTitle}>Vehicle equipment</h3>
                  <div className={css.filters}>
-                     {filterValues.map((filter) => {
+                 {filterValues.map((filter) => {
                          return (
-                             <button key={filter.title} className={`${css.filterBtn}`} type='button' onClick={onFilterClick}>
+                             <button key={filter.title} className={`${css.filterBtn}`} type='button' onClick={() => applyFilters()}>
                                  <svg className={css.filterSvg}>
                                      <use href={filter.svg}/>
                                  </svg>
@@ -86,7 +63,7 @@ export default function Filter() {
         <div className={css.filters}>
             {vehicleType.map((filter) => {
                 return (
-                    <button key={filter.title} className={`${css.filterBtn}`} type='button' onClick={onTypeClick}>
+                    <button key={filter.title} className={`${css.filterBtn} `} type='button' onClick={() => selectType()}>
                         <svg className={css.filterSvg}>
                             <use href={filter.svg}/>
                         </svg>
@@ -97,7 +74,7 @@ export default function Filter() {
         </div>
       </div>
 
-      <button className={`${css.searchBtn} orangeButton`} onClick={handleSearch}>Search</button>
+      <button className={`${css.searchBtn} orangeButton`} onClick={search}>Search</button>
     </div>
   );
 };
