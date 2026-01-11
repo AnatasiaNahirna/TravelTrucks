@@ -1,0 +1,7 @@
+.section {
+    display: flex;
+    gap: 64px;
+    justify-content: center;
+    margin-top: 48px;
+    margin-bottom: 52px;
+}

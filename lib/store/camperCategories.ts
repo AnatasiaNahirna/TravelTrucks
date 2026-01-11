@@ -1,6 +1,6 @@
 import Camper from "@/types/camper";
 
-export const camperCategories: { key: keyof Camper, icon: string; title: string }[] = [
+export const camperCategories: { key: keyof Camper, icon: string, title: string, values?: string[] }[] = [
     { key:'transmission', icon: 'automatic', title: 'Automatic' },
     { key: 'AC', icon: 'ac', title: 'AC' },
     { key:'engine', icon: 'petrol', title: 'Petrol' },

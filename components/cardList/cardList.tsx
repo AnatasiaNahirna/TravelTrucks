@@ -27,7 +27,6 @@ export default function CardList({ campers }: CamperListProps) {
             setPage(nextPage);
         } catch (error) {
             console.error(error);
-        } finally {
         }
     };
 

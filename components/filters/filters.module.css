@@ -1,0 +1,97 @@
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+}
+
+.locText {
+    color: #6C717B;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.inputWrapper {
+    background-color: #F7F7F7;
+    margin-bottom: 40px;
+    display: flex;
+    position: relative;
+}
+
+.inputSvg {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 20px;
+    bottom: 16px;
+}
+
+.input {
+        width: 100%;
+        padding: 18px 18px 18px 48px;
+        background-color: #F7F7F7;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        outline: none;
+}
+
+.input::placeholder {
+    color: #101828;
+}
+
+.filterText {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 32px;
+    color: #475467;
+}
+
+.filterTitle {
+    font-weight: 600;
+    font-size: 20px;
+    color:  #101828;
+    margin-bottom: 32px;
+}
+
+.filters {
+    padding-top: 24px;
+    border-top: 1px solid #DADDE1;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.filterBtn {
+    border: 1px solid #DADDE1;
+    border-radius: 12px;
+    width: 112px;
+    height: 96px;
+    background-color: transparent;
+    cursor: pointer;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filterBtnActive {
+    border-color: #E44848;
+}
+
+.filterSvg {
+    width: 32px;
+    height: 32px;
+}
+
+.btnText {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+.searchBtn {
+    width: 166px;
+    height: 56px;
+}

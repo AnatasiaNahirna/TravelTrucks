@@ -68,10 +68,20 @@ export default function CamperCard({ camper }: CamperCardProps) {
 
                 <div className={css.categories}>
                     {camperCategories
-                        .filter(({ key }) => camper[key])
-                        .slice(0,4)
-                        .map(({ icon, title }) => {
-                        return <Category key={title} icon={icon} title={title}/>
+                        .filter(({ key }) => {
+                            const value = camper[key];
+                            
+                            if (typeof value === 'boolean') {
+                                return value === true;          // показуємо тільки якщо true
+                            }
+
+                            if (typeof value === 'string') {
+                                return value.length > 0;        // або value !== ''
+                            }
+                        })
+                        .slice(0,5)
+                        .map(({ title }) => {
+                        return <Category key={title} title={title}/>
                     })}
                 </div>
                 <button className={`${css.showMoreBtn} orangeButton`} onClick={handleShowMoreCLick}>Show More</button>
