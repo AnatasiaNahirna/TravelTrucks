@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { camperCategories } from '../../lib/store/camperCategories';
 import { useState } from 'react';
 import { useRouter } from "next/navigation";
+import Category from '../category/category';
 
 interface CamperCardProps {
     camper: Camper,
@@ -28,11 +29,12 @@ export default function CamperCard({ camper }: CamperCardProps) {
     return (
         <li className={css.card}>
             <div className={css.imgWrapper}>
-            <Image
-                alt={camper.name}
-                width='292'
-                height='320'
-                src={camper.gallery[0]}
+                <Image
+                    className={css.camperImg}
+                    alt={camper.name}
+                    fill
+                    style={{objectFit: 'cover'}}
+                    src={camper.gallery[0].thumb}
                 />
             </div>
 
@@ -40,37 +42,38 @@ export default function CamperCard({ camper }: CamperCardProps) {
                 <div className={css.titleWrapper}>
                     <h2 className={css.title}>{camper.name}</h2>
                     <div className={css.priceWrapper}>
-                        <p className={css.price}>{camper.price}</p>
+                        <p className={css.price}>€{camper.price}</p>
                         <button className={css.likeButton} onClick={handleFavouriteClick}>
                             <svg>
-                                <use href="/svg/likeButton.svg"/>
+                                <use href={favourite ? '/svg/likedButton.svg' : '/svg/likeButton.svg/'} />
                             </svg>
                         </button>
                     </div>
                 </div>
                 <div className={css.ratingAndLocationWrap}>
                     <div className={css.rating}>
-                        <svg>
+                        <svg className={css.ratingSvg}>
                             <use href='/svg/star.svg'/>
                         </svg>
-                        <p>{camper.rating} ({camper.reviews.reviewer_rating})</p>
+                        <p className={css.ratText}>{camper.rating} ({camper.reviews.length} Reviews)</p>
                     </div>
                     <div className={css.location}>
-                        <svg className={css.locationSvg}>
+                        <svg className={css.ratingSvg}>
                             <use href='/svg/location.svg'/>
                         </svg>
-                        <p>{camper.location}</p>
+                        <p className={css.ratText}>{camper.location}</p>
                     </div>
                 </div>
                 <p className={css.descripotion}>{camper.description}</p>
 
                 <div className={css.categories}>
-                    {camperCategories.map(({ icon, title }) => {
-                        
-                        return null // додам пізніше
+                    {camperCategories
+                        .filter(({ key }) => camper[key])
+                        .map(({ icon, title }) => {
+                        return <Category key={title} icon={icon} title={title}/>
                     })}
                 </div>
-                <button className={css.showMoreBtn} onClick={handleShowMoreCLick}>Show More</button>
+                <button className={`${css.showMoreBtn} orangeButton`} onClick={handleShowMoreCLick}>Show More</button>
             </div>
         </li>
     )

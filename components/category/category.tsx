@@ -1,10 +1,15 @@
 import css from './category.module.css';
 
-export default function Category(id: string, title: string) { 
+type categoryProps = {
+    icon: string,
+    title: string,
+}
+
+export default function Category({icon, title}: categoryProps) { 
     return (
         <div className={css.div}>
             <svg className={css.icon}>
-                <use href={`/svg/${id}`} />
+                <use href={`/svg/${title}.svg`} />
             </svg>
             <p className={css.title}>{title}</p>
         </div>

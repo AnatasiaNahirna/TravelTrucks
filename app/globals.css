@@ -6,6 +6,10 @@ body {
   margin: 0;
 }
 
+img {
+  display: block;
+}
+
 ul {
   list-style: none;
   margin-left: 0;
@@ -27,7 +31,7 @@ a {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button {
+.orangeButton {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #E44848;
@@ -37,8 +41,8 @@ button {
   cursor: pointer;
 }
 
-button:hover,
-button:focus {
+.orangeButton:hover,
+.orangeButton:focus {
   background-color: #D84343;
 }
 

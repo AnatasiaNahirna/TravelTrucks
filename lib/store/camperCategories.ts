@@ -1,12 +1,14 @@
-export const camperCategories: { icon: string; title: string }[] = [
-    { icon: 'automatic', title: 'Automatic' },
-    { icon: 'ac', title: 'AC' },
-    { icon: 'petrol', title: 'Petrol' },
-    { icon: 'kitchen', title: 'Kitchen' },
-    { icon: 'radio', title: 'Radio' },
-    { icon: 'bathroom', title: 'Bathroom' },
-    { icon: 'refrigerator', title: 'Refrigerator' },
-    { icon: 'microwave', title: 'Microwave' },
-    { icon: 'gas', title: 'Gas' },
-    { icon: 'water', title: 'Water' },
+import Camper from "@/types/camper";
+
+export const camperCategories: { key: keyof Camper, icon: string; title: string }[] = [
+    { key:'transmission', icon: 'automatic', title: 'Automatic' },
+    { key: 'AC', icon: 'ac', title: 'AC' },
+    { key:'engine', icon: 'petrol', title: 'Petrol' },
+    { key: 'kitchen', icon: 'kitchen', title: 'Kitchen' },
+    { key: 'radio', icon: 'radio', title: 'Radio' },
+    { key: 'bathroom', icon: 'bathroom', title: 'Bathroom' },
+    { key:'refrigerator', icon: 'refrigerator', title: 'Refrigerator' },
+    { key:'microwave', icon: 'microwave', title: 'Microwave' },
+    { key:'gas', icon: 'gas', title: 'Gas' },
+    { key:'water', icon: 'water', title: 'Water' },
 ];

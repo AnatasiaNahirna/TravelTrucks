@@ -1,0 +1,104 @@
+.card {
+    display: flex;
+    gap: 24px;
+    max-width: 888px;
+    margin-bottom: 32px;
+    border: 1px solid #DADDE1;
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.imgWrapper {
+    position: relative;
+    width: 292px;
+    height: 320px;
+    flex-shrink: 0;
+}
+
+.camperImg {
+    width: 292px;
+    height: 320px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.titleWrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.title {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.priceWrapper {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.likeButton {
+    width: 24px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.likedButton svg {
+    fill: #E44848;
+}
+
+.ratingAndLocationWrap {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.rating, .location {
+    display: flex;
+}
+
+.ratingSvg {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+}
+
+.ratText {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.descripotion {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #475467;
+    margin-bottom: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.categories {
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.showMoreBtn {
+    width: 166px;
+    height: 56px;
+}

@@ -1,0 +1,18 @@
+.div {
+    background-color: #F2F4F7;
+    border-radius: 100px;
+    padding: 12px 18px;
+    max-width: fit-content;
+    display: flex;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 4.5px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 16px;
+}

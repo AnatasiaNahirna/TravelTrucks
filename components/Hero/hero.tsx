@@ -14,7 +14,7 @@ export default function Hero() {
         <div className={css.contentWrapper}>
           <h1 className={css.mainText}>Campers of your dreams</h1>
           <p className={css.text}>You can find everything you want in our catalog</p>
-          <button className={`${css.button} button`} type='button' onClick={buttonClick}>View Now</button>
+          <button className={`${css.button} orangeButton`} type='button' onClick={buttonClick}>View Now</button>
         </div>
       </div>
     </section>
